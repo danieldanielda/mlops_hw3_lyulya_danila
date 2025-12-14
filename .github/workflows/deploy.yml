@@ -28,6 +28,6 @@ jobs:
           
       - name: Display image info
         run: |
-          echo "Good"
+          echo "Image pushed successfully!"
           echo "Image: ${IMAGE_NAME}"
           echo "You can pull it with: docker pull ${IMAGE_NAME}"
