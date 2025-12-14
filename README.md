@@ -33,13 +33,13 @@ docker-compose -f docker-compose.all.yml up --build -d
 
 ## Проверка работоспособности
 
-curl http://localhost:8086/health <br>
+curl http://localhost:8086/api/v1/health <br>
 
 ![Step 2](images/1.png)
 
-curl -X POST http://localhost:8086/predict \ <br>
-  -H "Content-Type: application/json" \ <br>
-  -d '{"x": [1,2,3]}' <br>
+curl -X POST http://localhost:8086/api/v1/predict \ <br>
+  -H "Content-Type: application/json" \<br>
+  -d '{"features": [5.1, 3.5, 1.4, 0.2]}' <br>
 
 ![Step 2](images/2.png)
 
