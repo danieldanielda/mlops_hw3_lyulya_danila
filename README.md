@@ -35,13 +35,13 @@ docker-compose -f docker-compose.all.yml up --build -d
 
 curl http://localhost:8086/health <br>
 
-СКРИН <br>
+![Step 2](images/1.png)
 
 curl -X POST http://localhost:8086/predict \ <br>
   -H "Content-Type: application/json" \ <br>
   -d '{"x": [1,2,3]}' <br>
 
-СКРИН <br>
+![Step 2](images/2.png)
 
 ## Переключение между Blue и Green
 
@@ -49,7 +49,7 @@ curl -X POST http://localhost:8086/predict \ <br>
 2. Найдите блок <br>
     upstream ml_backend {  <br>
     server mlservice_blue:8080;  # ← активная версия <br>
-    # server mlservice_green:8080; <br>
+    #server mlservice_green:8080; <br>
     } 
 3. Закомментируйте строку с mlservice_blue, раскомментируйте mlservice_green <br>
 4. Перезагрузите Nginx: docker-compose -f docker-compose.nginx.yml up --build -d <br>
